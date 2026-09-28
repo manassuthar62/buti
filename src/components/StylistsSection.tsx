@@ -30,14 +30,14 @@ export default function StylistsSection({ onBookWithStylist }: StylistsSectionPr
         </div>
 
         {/* Stylists Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-8">
+        <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-8">
           {STYLISTS_DATA.map((artist) => (
             <div
               key={artist.id}
               className="luxe-card rounded-3xl overflow-hidden flex flex-col group bg-white border border-[#D97D64]/20 hover:border-[#D97D64]/60 shadow-sm"
             >
               {/* Image */}
-              <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-[#FFF4F1]">
+              <div className="relative h-56 xs:h-64 sm:h-72 w-full overflow-hidden bg-[#FFF4F1]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={artist.image}
@@ -47,13 +47,13 @@ export default function StylistsSection({ onBookWithStylist }: StylistsSectionPr
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 
                 {/* Rating Badge */}
-                <div className="absolute top-3 right-3 flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-white/90 backdrop-blur-md border border-[#D97D64]/30 text-xs text-[#D97D64] font-extrabold shadow-sm">
+                <div className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-white/90 backdrop-blur-md border border-[#D97D64]/30 text-xs text-[#D97D64] font-extrabold shadow-sm">
                   <Star className="w-3.5 h-3.5 fill-[#D97D64]" />
                   <span>{artist.rating}</span>
                 </div>
 
                 {/* Experience Badge */}
-                <div className="absolute bottom-3 left-3 px-2.5 py-0.5 rounded-full bg-black/75 backdrop-blur-md text-[10px] sm:text-[11px] text-[#F5DE98] font-bold">
+                <div className="absolute bottom-2.5 left-2.5 sm:bottom-3 sm:left-3 px-2 sm:px-2.5 py-0.5 rounded-full bg-black/75 backdrop-blur-md text-[9px] xs:text-[10px] sm:text-[11px] text-[#F5DE98] font-bold">
                   {artist.experience} Craftsmanship
                 </div>
               </div>

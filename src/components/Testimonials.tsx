@@ -82,18 +82,18 @@ export default function Testimonials() {
         </div>
 
         {/* Aggregate Ratings Banner */}
-        <div className="mt-10 sm:mt-14 luxe-card p-4 sm:p-6 rounded-3xl border border-[#D97D64]/20 grid grid-cols-3 gap-2 sm:gap-6 text-center bg-white shadow-xl">
+        <div className="mt-8 sm:mt-14 luxe-card p-3.5 xs:p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-[#D97D64]/20 grid grid-cols-3 gap-1.5 sm:gap-6 text-center bg-white shadow-xl">
           <div>
-            <div className="font-serif text-xl sm:text-3xl font-bold text-[#D97D64]">4.9 / 5.0</div>
-            <p className="text-[10px] sm:text-xs text-[#6B5E72] font-bold mt-0.5">Google Rating</p>
+            <div className="font-serif text-base xs:text-xl sm:text-3xl font-bold text-[#D97D64]">4.9 / 5.0</div>
+            <p className="text-[9px] xs:text-[10px] sm:text-xs text-[#6B5E72] font-bold mt-0.5">Google Rating</p>
           </div>
           <div className="border-x border-gray-200 px-1 sm:px-2">
-            <div className="font-serif text-xl sm:text-3xl font-bold text-[#1C1322]">99.4%</div>
-            <p className="text-[10px] sm:text-xs text-[#6B5E72] font-bold mt-0.5">Satisfaction</p>
+            <div className="font-serif text-base xs:text-xl sm:text-3xl font-bold text-[#1C1322]">99.4%</div>
+            <p className="text-[9px] xs:text-[10px] sm:text-xs text-[#6B5E72] font-bold mt-0.5">Satisfaction</p>
           </div>
           <div>
-            <div className="font-serif text-xl sm:text-3xl font-bold text-[#D97D64]">100% Clean</div>
-            <p className="text-[10px] sm:text-xs text-[#6B5E72] font-bold mt-0.5">Hygiene</p>
+            <div className="font-serif text-base xs:text-xl sm:text-3xl font-bold text-[#D97D64]">100% Clean</div>
+            <p className="text-[9px] xs:text-[10px] sm:text-xs text-[#6B5E72] font-bold mt-0.5">Hygiene</p>
           </div>
         </div>
 

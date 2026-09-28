@@ -89,41 +89,41 @@ export default function BookingModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/60 backdrop-blur-md overflow-y-auto">
-      <div className="relative w-full max-w-2xl bg-white rounded-t-3xl sm:rounded-3xl p-5 sm:p-8 border-t-2 sm:border-2 border-[#D97D64]/30 shadow-2xl my-0 sm:my-8 max-h-[92vh] overflow-y-auto">
+      <div className="relative w-full max-w-2xl bg-white rounded-t-3xl sm:rounded-3xl p-4 xs:p-5 sm:p-8 border-t-2 sm:border-2 border-[#D97D64]/30 shadow-2xl my-0 sm:my-8 max-h-[90vh] sm:max-h-[92vh] overflow-y-auto">
         
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 sm:top-5 sm:right-5 p-2 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 hover:text-black transition-colors cursor-pointer z-10"
+          className="absolute top-3.5 right-3.5 sm:top-5 sm:right-5 p-2 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 hover:text-black transition-colors cursor-pointer z-10 active:scale-95"
           aria-label="Close Booking Modal"
         >
-          <X className="w-5 h-5" />
+          <X className="w-4 h-4 sm:w-5 sm:h-5" />
         </button>
 
         {!isConfirmed ? (
           <div>
             {/* Modal Header */}
-            <div className="mb-4 sm:mb-6 space-y-1 pr-8">
-              <div className="flex items-center gap-1.5 text-[11px] sm:text-xs text-[#D97D64] uppercase tracking-widest font-extrabold">
+            <div className="mb-3.5 sm:mb-6 space-y-1 pr-7 sm:pr-8">
+              <div className="flex items-center gap-1.5 text-[10px] xs:text-[11px] sm:text-xs text-[#D97D64] uppercase tracking-widest font-extrabold">
                 <Sparkles className="w-3.5 h-3.5" />
                 VIP Reservation Desk
               </div>
-              <h3 className="font-serif text-xl sm:text-3xl font-bold text-[#1C1322]">
+              <h3 className="font-serif text-lg xs:text-xl sm:text-3xl font-bold text-[#1C1322] leading-snug">
                 Reserve Your Luxury Experience
               </h3>
             </div>
 
             {/* Stepper Indicator */}
-            <div className="flex items-center justify-between gap-1 sm:gap-2 mb-6 sm:mb-8 border-b border-gray-100 pb-3 sm:pb-4">
+            <div className="flex items-center justify-between gap-1 sm:gap-2 mb-4 sm:mb-8 border-b border-gray-100 pb-2.5 sm:pb-4">
               {[
                 { s: 1, label: 'Ritual' },
                 { s: 2, label: 'Artist' },
                 { s: 3, label: 'Schedule' },
                 { s: 4, label: 'Details' },
               ].map((item) => (
-                <div key={item.s} className="flex items-center gap-1.5 sm:gap-2">
+                <div key={item.s} className="flex items-center gap-1 sm:gap-2">
                   <div
-                    className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all ${
+                    className={`w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-[11px] sm:text-xs font-bold transition-all ${
                       step === item.s
                         ? 'btn-primary-luxe shadow-md'
                         : step > item.s
@@ -131,10 +131,10 @@ export default function BookingModal({
                         : 'bg-gray-100 text-gray-500'
                     }`}
                   >
-                    {step > item.s ? <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> : item.s}
+                    {step > item.s ? <Check className="w-3 h-3 sm:w-4 sm:h-4" /> : item.s}
                   </div>
                   <span
-                    className={`text-[11px] sm:text-xs hidden xs:inline font-semibold ${
+                    className={`text-[10px] xs:text-[11px] sm:text-xs hidden xs:inline font-semibold ${
                       step === item.s ? 'text-[#1C1322]' : 'text-gray-400'
                     }`}
                   >

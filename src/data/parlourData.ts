@@ -50,6 +50,22 @@ export interface Transformation {
   afterImage: string;
 }
 
+export interface VideoItem {
+  id: string;
+  title: string;
+  category: 'bridal' | 'hair' | 'skin' | 'makeup' | 'jewelry' | 'transformations' | 'studio';
+  categoryLabel: string;
+  videoSrc: string;
+  poster: string;
+  duration: string;
+  views: string;
+  likes: string;
+  tag: string;
+  artist: string;
+  description: string;
+  accentColor: string;
+}
+
 export interface Testimonial {
   id: string;
   name: string;
@@ -461,6 +477,219 @@ export const QUIZ_QUESTIONS = [
       { label: "Frizzy, damaged, or unmanageable hair", value: "damaged" },
       { label: "Dull with uneven tone or sun tan", value: "dull" }
     ]
+  }
+];
+
+export const VIDEOS_DATA: VideoItem[] = [
+  {
+    id: "reel-1",
+    title: "Royal Rajputana Bridal Makeover by Arti Bhavsar",
+    category: "bridal",
+    categoryLabel: "Bridal Couture",
+    videoSrc: "/videos/reel_1.mp4",
+    poster: "/images/6.jpeg",
+    duration: "0:45",
+    views: "148.5K",
+    likes: "14.2K",
+    tag: "Arti's Signature",
+    artist: "Arti Bhavsar",
+    description: "Witness the regal Rajputana bridal glam featuring waterproof HD airbrush base, royal mathapatti setting, and bespoke floral hairdo.",
+    accentColor: "#D97D64"
+  },
+  {
+    id: "reel-2",
+    title: "24K Gold Hydra Facial & Glass Skin Infusion",
+    category: "skin",
+    categoryLabel: "Skin & Facial",
+    videoSrc: "/videos/reel_2.mp4",
+    poster: "/images/3.jpeg",
+    duration: "0:38",
+    views: "92.4K",
+    likes: "8.7K",
+    tag: "Viral Glass Skin",
+    artist: "Skin Specialist",
+    description: "Deep ultrasonic pore extraction followed by pure 24K gold foil infusion and hyaluronic hydration booster for instantaneous radiance.",
+    accentColor: "#C59B43"
+  },
+  {
+    id: "reel-3",
+    title: "Bridal Jewellery Setting & Kundan Mathapatti",
+    category: "jewelry",
+    categoryLabel: "Jewelry Architecture",
+    videoSrc: "/videos/reel_3.mp4",
+    poster: "/images/1.jpeg",
+    duration: "0:52",
+    views: "76.1K",
+    likes: "6.9K",
+    tag: "Bespoke Styling",
+    artist: "Arti Bhavsar",
+    description: "Precision architectural placement of heritage Kundan, Polki, and Borla to perfectly frame the bride's facial structure.",
+    accentColor: "#E28E77"
+  },
+  {
+    id: "reel-4",
+    title: "French Balayage & Caviar Keratin Treatment",
+    category: "hair",
+    categoryLabel: "Hair Couture",
+    videoSrc: "/videos/reel_4.mp4",
+    poster: "/images/4.jpeg",
+    duration: "0:40",
+    views: "110.3K",
+    likes: "11.5K",
+    tag: "Trending Hair",
+    artist: "Senior Hair Master",
+    description: "Seamless sun-kissed honey caramel balayage transitions paired with intensive caviar protein restoration for mirror-like shine.",
+    accentColor: "#B85F48"
+  },
+  {
+    id: "reel-5",
+    title: "Glam Bliss Award-Winning Look Unveiled",
+    category: "studio",
+    categoryLabel: "Awards & Moments",
+    videoSrc: "/videos/reel_5.mp4",
+    poster: "/images/2.jpeg",
+    duration: "1:05",
+    views: "215.8K",
+    likes: "22.4K",
+    tag: "Award Winning 🏆",
+    artist: "Arti Bhavsar",
+    description: "The official masterclass and award-winning bridal creation that earned Arti Bhavsar the prestigious Glam Bliss Award.",
+    accentColor: "#D97D64"
+  },
+  {
+    id: "reel-6",
+    title: "Haldi & Mehendi Fresh Floral Glow",
+    category: "makeup",
+    categoryLabel: "Party & Festive",
+    videoSrc: "/videos/reel_6.mp4",
+    poster: "/images/5.jpeg",
+    duration: "0:35",
+    views: "64.2K",
+    likes: "5.3K",
+    tag: "Festive Glam",
+    artist: "Arti Bhavsar",
+    description: "Dewy, sunlit glass skin makeup with natural blush tones and fresh baby breath floral braids designed for Haldi and Mehendi ceremonies.",
+    accentColor: "#E5C368"
+  },
+  {
+    id: "reel-7",
+    title: "Before & After Royal Bridal Transformation",
+    category: "transformations",
+    categoryLabel: "Makeover Magic",
+    videoSrc: "/videos/reel_7.mp4",
+    poster: "/images/6.jpeg",
+    duration: "0:48",
+    views: "189.0K",
+    likes: "19.8K",
+    tag: "Real Bride",
+    artist: "Arti Bhavsar",
+    description: "An unbelievable before-and-after bridal transition showcasing colour correction, sculpting contour, and imperial jewelry synchronization.",
+    accentColor: "#C26B54"
+  },
+  {
+    id: "reel-8",
+    title: "Haute Gel Nail Art & Chrome Accents",
+    category: "makeup",
+    categoryLabel: "Nail Lounge",
+    videoSrc: "/videos/reel_8.mp4",
+    poster: "/images/1.jpeg",
+    duration: "0:30",
+    views: "52.7K",
+    likes: "4.1K",
+    tag: "Nail Lounge",
+    artist: "Nail Artist",
+    description: "Custom sculpted extensions with mirror rose-gold chrome finish and Swarovski crystal inlays for the modern bride.",
+    accentColor: "#D97D64"
+  },
+  {
+    id: "reel-9",
+    title: "Gujarati Wedding Muhurat Bridal Look",
+    category: "bridal",
+    categoryLabel: "Bridal Couture",
+    videoSrc: "/videos/reel_9.mp4",
+    poster: "/images/2.jpeg",
+    duration: "0:50",
+    views: "134.6K",
+    likes: "12.9K",
+    tag: "Traditional Glam",
+    artist: "Arti Bhavsar",
+    description: "Authentic Panetar & Gharchola styling paired with classical Gujarati eye definition and crimson lip harmony.",
+    accentColor: "#C59B43"
+  },
+  {
+    id: "reel-10",
+    title: "Celebrity 3D Silk Lash & Smokey Eyes",
+    category: "makeup",
+    categoryLabel: "Party & Festive",
+    videoSrc: "/videos/reel_10.mp4",
+    poster: "/images/3.jpeg",
+    duration: "0:32",
+    views: "88.3K",
+    likes: "7.8K",
+    tag: "Eye Artistry",
+    artist: "Arti Bhavsar",
+    description: "Dramatic gradient eyeshadow blending with hand-crafted 3D mink silk lashes and waterproof precision eyeliner.",
+    accentColor: "#2A1D33"
+  },
+  {
+    id: "reel-11",
+    title: "Bridal Dupatta Draping & Silhouette Setting",
+    category: "jewelry",
+    categoryLabel: "Jewelry Architecture",
+    videoSrc: "/videos/reel_11.mp4",
+    poster: "/images/4.jpeg",
+    duration: "0:44",
+    views: "98.5K",
+    likes: "9.4K",
+    tag: "Draping Masterclass",
+    artist: "Arti Bhavsar",
+    description: "Flawless double-dupatta pleating and crown pinning ensuring weight distribution and effortless royal posture for 12+ hours.",
+    accentColor: "#B85F48"
+  },
+  {
+    id: "reel-12",
+    title: "Pre-Bridal Rose & Pearl Skin Polish",
+    category: "skin",
+    categoryLabel: "Skin & Facial",
+    videoSrc: "/videos/reel_12.mp4",
+    poster: "/images/5.jpeg",
+    duration: "0:42",
+    views: "71.9K",
+    likes: "6.5K",
+    tag: "Bridal Glow",
+    artist: "Skin Specialist",
+    description: "Luxurious organic exfoliating scrub with crushed pearls and Damask rose oil for full-body bridal luminosity.",
+    accentColor: "#F7B7A3"
+  },
+  {
+    id: "reel-13",
+    title: "Sangeet Night Shimmer & Hollywood Waves",
+    category: "hair",
+    categoryLabel: "Hair Couture",
+    videoSrc: "/videos/reel_13.mp4",
+    poster: "/images/6.jpeg",
+    duration: "0:36",
+    views: "105.2K",
+    likes: "10.1K",
+    tag: "Party Hair",
+    artist: "Senior Hair Master",
+    description: "Voluminous retro Hollywood waves paired with champagne micro-glitter lids that sparkle under stage lights.",
+    accentColor: "#C59B43"
+  },
+  {
+    id: "reel-14",
+    title: "Live Salon Walkthrough & Happy Brides",
+    category: "studio",
+    categoryLabel: "Awards & Moments",
+    videoSrc: "/videos/reel_14.mp4",
+    poster: "/images/1.jpeg",
+    duration: "0:55",
+    views: "123.4K",
+    likes: "13.2K",
+    tag: "Partapur Studio",
+    artist: "Arti Bhavsar Team",
+    description: "Take a virtual tour inside Nivi Beauty Care's luxury bridal suite in Partapur, Banswara with real client smiles.",
+    accentColor: "#D97D64"
   }
 ];
 

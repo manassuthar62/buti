@@ -48,13 +48,13 @@ export default function OffersBanner({ onClaimOffer }: OffersBannerProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
           
           {/* Left: Limited Time Discount Countdown Box */}
-          <div className="lg:col-span-7 luxe-card rounded-3xl p-5 sm:p-10 border-2 border-[#D97D64]/30 relative overflow-hidden space-y-4 sm:space-y-6 shadow-2xl bg-white">
-            <div className="flex items-center gap-1.5 text-[11px] sm:text-xs text-[#D97D64] uppercase tracking-wider sm:tracking-widest font-extrabold">
-              <Timer className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-              Limited-Time Festive Privilege
+          <div className="lg:col-span-7 luxe-card rounded-3xl p-4 xs:p-5 sm:p-10 border-2 border-[#D97D64]/30 relative overflow-hidden space-y-3.5 sm:space-y-6 shadow-2xl bg-white">
+            <div className="flex items-center gap-1.5 text-[10px] xs:text-[11px] sm:text-xs text-[#D97D64] uppercase tracking-wider sm:tracking-widest font-extrabold">
+              <Timer className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
+              <span>Limited-Time Festive Privilege</span>
             </div>
 
-            <h3 className="font-serif text-2xl sm:text-4xl font-bold text-[#1C1322] leading-tight">
+            <h3 className="font-serif text-xl xs:text-2xl sm:text-4xl font-bold text-[#1C1322] leading-tight">
               Enjoy <span className="text-rose-gold-gradient">Flat 25% Off</span> On All Bridal & Hair Rituals
             </h3>
 
@@ -63,7 +63,7 @@ export default function OffersBanner({ onClaimOffer }: OffersBannerProps) {
             </p>
 
             {/* Countdown Counter Units (Ultra responsive for 320px+ mobile) */}
-            <div className="grid grid-cols-4 gap-2 sm:gap-4 max-w-md">
+            <div className="grid grid-cols-4 gap-1.5 xs:gap-2 sm:gap-4 max-w-md">
               {[
                 { val: timeLeft.days, label: 'Days' },
                 { val: timeLeft.hours, label: 'Hours' },
@@ -72,12 +72,12 @@ export default function OffersBanner({ onClaimOffer }: OffersBannerProps) {
               ].map((item, idx) => (
                 <div
                   key={idx}
-                  className="p-2 sm:p-4 rounded-2xl bg-[#FFF4F1] border border-[#D97D64]/20 text-center shadow-inner"
+                  className="p-1.5 xs:p-2.5 sm:p-4 rounded-xl xs:rounded-2xl bg-[#FFF4F1] border border-[#D97D64]/20 text-center shadow-inner"
                 >
-                  <span className="font-serif text-xl sm:text-3xl font-bold text-[#D97D64] block leading-none sm:leading-tight">
+                  <span className="font-serif text-lg xs:text-xl sm:text-3xl font-bold text-[#D97D64] block leading-none sm:leading-tight">
                     {String(item.val).padStart(2, '0')}
                   </span>
-                  <span className="text-[9px] sm:text-xs text-[#6B5E72] uppercase tracking-wider font-bold mt-1 block">
+                  <span className="text-[8px] xs:text-[9px] sm:text-xs text-[#6B5E72] uppercase tracking-wider font-bold mt-1 block">
                     {item.label}
                   </span>
                 </div>
@@ -85,13 +85,13 @@ export default function OffersBanner({ onClaimOffer }: OffersBannerProps) {
             </div>
 
             {/* Promo Code & Action */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-1 sm:pt-2">
-              <div className="flex items-center justify-between px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-[#FFF0EC] border-2 border-dashed border-[#D97D64] gap-3">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-4 pt-1 sm:pt-2">
+              <div className="flex items-center justify-between px-3.5 sm:px-5 py-2 sm:py-3 rounded-full bg-[#FFF0EC] border-2 border-dashed border-[#D97D64] gap-2.5">
                 <span className="text-xs text-[#6B5E72] font-bold">Code:</span>
                 <span className="font-mono text-xs sm:text-sm font-bold text-[#D97D64] tracking-wider">ROYAL25</span>
                 <button
                   onClick={handleCopyCode}
-                  className="text-xs text-[#D97D64] hover:text-[#B85F48] flex items-center gap-1 cursor-pointer font-bold"
+                  className="text-xs text-[#D97D64] hover:text-[#B85F48] flex items-center gap-1 cursor-pointer font-bold active:scale-95 transition-transform"
                   title="Copy Code"
                 >
                   {copied ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4" />}
@@ -100,7 +100,7 @@ export default function OffersBanner({ onClaimOffer }: OffersBannerProps) {
 
               <button
                 onClick={onClaimOffer}
-                className="btn-primary-luxe w-full sm:w-auto px-6 sm:px-7 py-3 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold flex items-center justify-center gap-2 cursor-pointer shadow-lg hover:scale-105 active:scale-95 transition-transform"
+                className="btn-primary-luxe w-full sm:w-auto px-5 sm:px-7 py-3 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold flex items-center justify-center gap-2 cursor-pointer shadow-lg hover:scale-105 active:scale-95 transition-transform"
               >
                 <span>Claim 25% Privilege</span>
                 <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
@@ -109,8 +109,8 @@ export default function OffersBanner({ onClaimOffer }: OffersBannerProps) {
           </div>
 
           {/* Right: VIP Black Diamond Membership Card */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative rounded-3xl p-5 sm:p-8 bg-gradient-to-tr from-[#2A1D33] via-[#3D2B4A] to-[#1E1424] text-white border-2 border-[#E5C368]/40 shadow-2xl overflow-hidden space-y-4 sm:space-y-6">
+          <div className="lg:col-span-5 relative mt-3 sm:mt-0">
+            <div className="relative rounded-3xl p-4 xs:p-5 sm:p-8 bg-gradient-to-tr from-[#2A1D33] via-[#3D2B4A] to-[#1E1424] text-white border-2 border-[#E5C368]/40 shadow-2xl overflow-hidden space-y-3.5 sm:space-y-6">
               
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">

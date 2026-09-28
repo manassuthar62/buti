@@ -50,9 +50,9 @@ export default function BridalPackages({ onSelectPackage }: BridalPackagesProps)
                 )}
 
                 {/* Card Top / Header */}
-                <div className={`p-5 sm:p-8 ${pkg.badge ? 'pt-10 sm:pt-12' : ''}`}>
+                <div className={`p-4 xs:p-5 sm:p-8 ${pkg.badge ? 'pt-8 xs:pt-10 sm:pt-12' : ''}`}>
                   {/* Package Image Banner */}
-                  <div className="relative h-44 sm:h-48 rounded-2xl overflow-hidden mb-4 sm:mb-6 border border-gray-100 bg-[#FFF4F1]">
+                  <div className="relative h-40 xs:h-44 sm:h-48 rounded-2xl overflow-hidden mb-3.5 sm:mb-6 border border-gray-100 bg-[#FFF4F1]">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={pkg.image}
@@ -61,7 +61,7 @@ export default function BridalPackages({ onSelectPackage }: BridalPackagesProps)
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
                     
-                    <div className="absolute bottom-2.5 left-2.5 right-2.5 sm:bottom-3 sm:left-3 sm:right-3 flex items-center justify-between text-[11px] sm:text-xs">
+                    <div className="absolute bottom-2 left-2 right-2 sm:bottom-3 sm:left-3 sm:right-3 flex items-center justify-between text-[10px] xs:text-[11px] sm:text-xs">
                       <span className="px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-white/90 backdrop-blur-md text-[#B85F48] font-bold border border-[#D97D64]/20 shadow-sm">
                         {pkg.duration}
                       </span>
@@ -73,40 +73,40 @@ export default function BridalPackages({ onSelectPackage }: BridalPackagesProps)
                     </div>
                   </div>
 
-                  <h3 className="font-serif text-lg sm:text-2xl font-bold text-[#1C1322] mb-1.5 leading-snug">
+                  <h3 className="font-serif text-base xs:text-lg sm:text-2xl font-bold text-[#1C1322] mb-1 leading-snug">
                     {pkg.name}
                   </h3>
                   
-                  <p className="text-[11px] sm:text-xs text-[#D97D64] mb-4 font-bold">
+                  <p className="text-[10px] xs:text-[11px] sm:text-xs text-[#D97D64] mb-3 sm:mb-4 font-bold">
                     Ideal for: {pkg.idealFor}
                   </p>
 
                   {/* Price */}
-                  <div className="flex items-baseline gap-2 mb-4 sm:mb-6 pb-4 sm:pb-6 border-b border-gray-100">
-                    <span className="font-serif text-2xl sm:text-4xl font-bold text-[#D97D64]">
+                  <div className="flex items-baseline gap-2 mb-3.5 sm:mb-6 pb-3 sm:pb-6 border-b border-gray-100">
+                    <span className="font-serif text-xl xs:text-2xl sm:text-4xl font-bold text-[#D97D64]">
                       ₹{pkg.price.toLocaleString('en-IN')}
                     </span>
-                    <span className="text-xs sm:text-sm text-[#9B8E9E] line-through font-semibold">
+                    <span className="text-[11px] xs:text-xs sm:text-sm text-[#9B8E9E] line-through font-semibold">
                       ₹{pkg.originalPrice.toLocaleString('en-IN')}
                     </span>
                   </div>
 
                   {/* Inclusions List */}
-                  <div className="space-y-2.5 sm:space-y-3">
-                    <span className="text-[11px] sm:text-xs uppercase tracking-wider text-[#6B5E72] font-bold block">
+                  <div className="space-y-2 sm:space-y-3">
+                    <span className="text-[10px] sm:text-xs uppercase tracking-wider text-[#6B5E72] font-bold block">
                       Ritual Inclusions:
                     </span>
                     {pkg.features.map((feature, fIdx) => (
-                      <div key={fIdx} className="flex items-start gap-2 text-xs sm:text-sm text-[#3E3048] font-medium">
+                      <div key={fIdx} className="flex items-start gap-2 text-[11px] xs:text-xs sm:text-sm text-[#3E3048] font-medium">
                         <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#D97D64] shrink-0 mt-0.5" />
-                        <span>{feature}</span>
+                        <span className="leading-snug">{feature}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* Card CTA Bottom */}
-                <div className="p-5 sm:p-8 pt-0">
+                <div className="p-4 xs:p-5 sm:p-8 pt-0">
                   <button
                     onClick={() => onSelectPackage(pkg.name)}
                     className={`w-full py-3 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all cursor-pointer shadow-md active:scale-95 ${

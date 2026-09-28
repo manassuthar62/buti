@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import ServicesSection from '@/components/ServicesSection';
+import VideoReelsSection from '@/components/VideoReelsSection';
 import BeforeAfterSlider from '@/components/BeforeAfterSlider';
 import BridalPackages from '@/components/BridalPackages';
 import StylistsSection from '@/components/StylistsSection';
@@ -49,6 +50,11 @@ export default function Home() {
         <Hero
           onOpenBooking={() => handleOpenBooking()}
           onOpenQuiz={handleOpenQuiz}
+        />
+
+        {/* Exclusive 15 Real HD Video Reels & Masterclasses */}
+        <VideoReelsSection
+          onOpenBooking={(customService) => handleOpenBooking(customService || 'royal-bridal-hd')}
         />
 
         {/* Curated Services Catalog */}

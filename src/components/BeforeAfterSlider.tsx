@@ -65,7 +65,7 @@ export default function BeforeAfterSlider({ onOpenBooking }: BeforeAfterSliderPr
         </div>
 
         {/* Transformation Selector Tabs */}
-        <div className="flex items-center overflow-x-auto no-scrollbar gap-2 sm:gap-4 pb-2 sm:pb-0 sm:justify-center mb-8 sm:mb-10 px-1">
+        <div className="flex items-center overflow-x-auto no-scrollbar gap-1.5 xs:gap-2 sm:gap-4 pb-2 sm:pb-0 sm:justify-center mb-6 sm:mb-10 px-1">
           {TRANSFORMATIONS.map((trans, idx) => (
             <button
               key={trans.id}
@@ -73,7 +73,7 @@ export default function BeforeAfterSlider({ onOpenBooking }: BeforeAfterSliderPr
                 setSelectedTransIndex(idx);
                 setSliderPosition(50);
               }}
-              className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-1.5 sm:gap-2 cursor-pointer whitespace-nowrap shrink-0 active:scale-95 ${
+              className={`px-3.5 xs:px-4 sm:px-6 py-1.5 sm:py-2.5 rounded-full text-[11px] xs:text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-1.5 sm:gap-2 cursor-pointer whitespace-nowrap shrink-0 active:scale-95 ${
                 selectedTransIndex === idx
                   ? 'btn-primary-luxe shadow-md scale-105'
                   : 'bg-white text-[#5A4D62] border border-[#D97D64]/20 hover:border-[#D97D64] hover:text-[#D97D64]'
@@ -85,7 +85,7 @@ export default function BeforeAfterSlider({ onOpenBooking }: BeforeAfterSliderPr
         </div>
 
         {/* Main Slider & Story Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 lg:gap-12 items-center">
           
           {/* Draggable Slider Component */}
           <div className="lg:col-span-7">
@@ -101,7 +101,7 @@ export default function BeforeAfterSlider({ onOpenBooking }: BeforeAfterSliderPr
               onTouchStart={handleTouchStart}
               onTouchEnd={() => setIsDragging(false)}
               onTouchMove={handleTouchMove}
-              className="relative w-full h-[320px] xs:h-[360px] sm:h-[480px] rounded-3xl overflow-hidden luxe-card border-4 border-white cursor-ew-resize select-none shadow-2xl bg-white touch-pan-y"
+              className="relative w-full h-[290px] xs:h-[350px] sm:h-[480px] rounded-3xl overflow-hidden luxe-card border-2 sm:border-4 border-white cursor-ew-resize select-none shadow-2xl bg-white touch-none"
             >
               {/* After Image (Full width background) */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -129,37 +129,37 @@ export default function BeforeAfterSlider({ onOpenBooking }: BeforeAfterSliderPr
               </div>
 
               {/* Before Badge */}
-              <div className="absolute top-3 left-3 sm:top-4 sm:left-4 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-[10px] sm:text-xs font-bold tracking-wider text-white shadow-lg">
+              <div className="absolute top-2.5 left-2.5 sm:top-4 sm:left-4 px-2 sm:px-3.5 py-0.5 sm:py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-[9px] sm:text-xs font-bold tracking-wider text-white shadow-lg">
                 BEFORE
               </div>
 
               {/* After Badge */}
-              <div className="absolute top-3 right-3 sm:top-4 sm:right-4 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-gradient-to-r from-[#D97D64] to-[#C59B43] text-white text-[10px] sm:text-xs font-extrabold tracking-wider shadow-xl">
+              <div className="absolute top-2.5 right-2.5 sm:top-4 sm:right-4 px-2 sm:px-3.5 py-0.5 sm:py-1.5 rounded-full bg-gradient-to-r from-[#D97D64] to-[#C59B43] text-white text-[9px] sm:text-xs font-extrabold tracking-wider shadow-xl">
                 AFTER GLAM ✨
               </div>
 
               {/* Slider Divider Line */}
               <div
-                className="absolute top-0 bottom-0 w-[4px] bg-white shadow-[0_0_15px_rgba(217,125,100,0.8)] pointer-events-none"
+                className="absolute top-0 bottom-0 w-[3px] sm:w-[4px] bg-white shadow-[0_0_15px_rgba(217,125,100,0.8)] pointer-events-none"
                 style={{ left: `${sliderPosition}%` }}
               >
                 {/* Handle Icon Button */}
-                <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-gradient-to-tr from-[#D97D64] to-[#C59B43] border-2 border-white flex items-center justify-center shadow-xl">
-                  <ArrowLeftRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
+                <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-gradient-to-tr from-[#D97D64] to-[#C59B43] border-2 border-white flex items-center justify-center shadow-xl">
+                  <ArrowLeftRight className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                 </div>
               </div>
 
               {/* Drag Hint at Bottom */}
-              <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-black/70 backdrop-blur-md text-[10px] sm:text-xs text-white font-semibold flex items-center gap-1.5 sm:gap-2 pointer-events-none whitespace-nowrap">
-                <MoveHorizontal className="w-3.5 h-3.5 text-[#F5DE98]" />
+              <div className="absolute bottom-2.5 sm:bottom-4 left-1/2 -translate-x-1/2 px-2.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-black/70 backdrop-blur-md text-[9px] sm:text-xs text-white font-semibold flex items-center gap-1 sm:gap-2 pointer-events-none whitespace-nowrap">
+                <MoveHorizontal className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#F5DE98]" />
                 <span>Drag left or right</span>
               </div>
             </div>
           </div>
 
           {/* Right Column: Case Story & Treatments Used */}
-          <div className="lg:col-span-5 space-y-4 sm:space-y-6">
-            <div className="luxe-card p-5 sm:p-8 rounded-3xl border border-[#D97D64]/20 space-y-4 sm:space-y-6 bg-white shadow-xl">
+          <div className="lg:col-span-5 space-y-3.5 sm:space-y-6">
+            <div className="luxe-card p-4 xs:p-5 sm:p-8 rounded-3xl border border-[#D97D64]/20 space-y-3.5 sm:space-y-6 bg-white shadow-xl">
               <div>
                 <span className="text-[10px] sm:text-xs uppercase tracking-widest text-[#D97D64] font-extrabold">
                   Transformation Spotlight

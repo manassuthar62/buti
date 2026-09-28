@@ -76,12 +76,12 @@ export default function ServicesSection({ onSelectService }: ServicesSectionProp
           </div>
 
           {/* Category Filter Chips (Horizontally swipeable on mobile, flex-wrap on desktop) */}
-          <div className="flex items-center overflow-x-auto no-scrollbar gap-2 sm:gap-2.5 pb-2 sm:pb-0 sm:justify-center px-1">
+          <div className="flex items-center overflow-x-auto no-scrollbar gap-1.5 xs:gap-2 sm:gap-2.5 pb-2 sm:pb-0 sm:justify-center px-1">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 cursor-pointer whitespace-nowrap shrink-0 active:scale-95 ${
+                className={`px-3.5 xs:px-4 sm:px-5 py-1.5 sm:py-2.5 rounded-full text-[11px] xs:text-xs sm:text-sm font-bold transition-all duration-300 cursor-pointer whitespace-nowrap shrink-0 active:scale-95 ${
                   activeCategory === cat.id
                     ? 'btn-primary-luxe shadow-md scale-105'
                     : 'bg-white text-[#5A4D62] border border-[#D97D64]/20 hover:border-[#D97D64] hover:text-[#D97D64]'
@@ -94,7 +94,7 @@ export default function ServicesSection({ onSelectService }: ServicesSectionProp
         </div>
 
         {/* Services Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
           {filteredServices.map((service) => {
             const discountPercent = service.originalPrice
               ? Math.round(((service.originalPrice - service.price) / service.originalPrice) * 100)
@@ -106,7 +106,7 @@ export default function ServicesSection({ onSelectService }: ServicesSectionProp
                 className="luxe-card rounded-3xl overflow-hidden flex flex-col group bg-white border border-[#D97D64]/20 hover:border-[#D97D64]/60 shadow-sm"
               >
                 {/* Service Image with Badges */}
-                <div className="relative h-48 sm:h-56 w-full overflow-hidden bg-[#FFF4F1]">
+                <div className="relative h-44 xs:h-48 sm:h-56 w-full overflow-hidden bg-[#FFF4F1]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={service.image}
@@ -118,25 +118,25 @@ export default function ServicesSection({ onSelectService }: ServicesSectionProp
 
                   {/* Tag badge */}
                   {service.tag && (
-                    <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 flex items-center gap-1 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-white/95 backdrop-blur-md border border-[#D97D64]/30 text-[10px] sm:text-[11px] font-extrabold text-[#B85F48] shadow-md">
+                    <div className="absolute top-2 left-2 sm:top-3 sm:left-3 flex items-center gap-1 px-2 py-0.5 sm:px-3 sm:py-1 rounded-full bg-white/95 backdrop-blur-md border border-[#D97D64]/30 text-[9px] xs:text-[10px] sm:text-[11px] font-extrabold text-[#B85F48] shadow-md">
                       <Tag className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-[#D97D64]" />
                       <span>{service.tag}</span>
                     </div>
                   )}
 
                   {/* Duration Badge */}
-                  <div className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 flex items-center gap-1 px-2.5 py-0.5 sm:px-2.5 sm:py-1 rounded-full bg-black/75 backdrop-blur-md text-[10px] sm:text-[11px] text-white font-bold">
+                  <div className="absolute top-2 right-2 sm:top-3 sm:right-3 flex items-center gap-1 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full bg-black/75 backdrop-blur-md text-[9px] xs:text-[10px] sm:text-[11px] text-white font-bold">
                     <Clock className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-[#F5DE98]" />
                     <span>{service.duration}</span>
                   </div>
 
                   {/* Category Pill & Discount */}
-                  <div className="absolute bottom-2.5 left-2.5 right-2.5 sm:bottom-3 sm:left-3 sm:right-3 flex items-center justify-between">
-                    <span className="text-[11px] sm:text-xs font-extrabold text-white uppercase tracking-wider drop-shadow-md">
+                  <div className="absolute bottom-2 left-2 right-2 sm:bottom-3 sm:left-3 sm:right-3 flex items-center justify-between">
+                    <span className="text-[10px] sm:text-xs font-extrabold text-white uppercase tracking-wider drop-shadow-md">
                       {service.categoryLabel}
                     </span>
                     {discountPercent && (
-                      <span className="px-2 py-0.5 rounded-full bg-rose-500 text-white font-bold text-[9px] sm:text-[10px] shadow-md">
+                      <span className="px-2 py-0.5 rounded-full bg-rose-500 text-white font-bold text-[8.5px] sm:text-[10px] shadow-md">
                         {discountPercent}% OFF
                       </span>
                     )}
@@ -165,15 +165,15 @@ export default function ServicesSection({ onSelectService }: ServicesSectionProp
                   </div>
 
                   {/* Pricing & Booking Action */}
-                  <div className="pt-3 sm:pt-4 border-t border-gray-100 flex items-center justify-between">
-                    <div>
-                      <span className="text-[9px] sm:text-[10px] text-[#6B5E72] block uppercase tracking-wider font-bold">Experience Fee</span>
-                      <div className="flex items-baseline gap-1.5 sm:gap-2">
-                        <span className="font-serif text-lg sm:text-2xl font-bold text-[#D97D64]">
+                  <div className="pt-3 sm:pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+                    <div className="min-w-0">
+                      <span className="text-[8.5px] xs:text-[9px] sm:text-[10px] text-[#6B5E72] block uppercase tracking-wider font-bold">Experience Fee</span>
+                      <div className="flex items-baseline gap-1 sm:gap-2 truncate">
+                        <span className="font-serif text-base xs:text-lg sm:text-2xl font-bold text-[#D97D64]">
                           ₹{service.price.toLocaleString('en-IN')}
                         </span>
                         {service.originalPrice && (
-                          <span className="text-[11px] sm:text-xs text-[#9B8E9E] line-through font-semibold">
+                          <span className="text-[10px] xs:text-[11px] sm:text-xs text-[#9B8E9E] line-through font-semibold">
                             ₹{service.originalPrice.toLocaleString('en-IN')}
                           </span>
                         )}
@@ -182,7 +182,7 @@ export default function ServicesSection({ onSelectService }: ServicesSectionProp
 
                     <button
                       onClick={() => onSelectService(service.id)}
-                      className="btn-primary-luxe px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-bold flex items-center gap-1 sm:gap-1.5 cursor-pointer shadow-md hover:scale-105 active:scale-95 transition-transform"
+                      className="btn-primary-luxe px-3 xs:px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-bold flex items-center gap-1 sm:gap-1.5 cursor-pointer shadow-md hover:scale-105 active:scale-95 transition-transform shrink-0"
                     >
                       <span>Book Now</span>
                       <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />

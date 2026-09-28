@@ -69,12 +69,31 @@
 
 /* Safe area padding for iPhones with Home bar */
 .pb-safe {
-  padding-bottom: env(safe-area-inset-bottom, 16px);
+  padding-bottom: max(env(safe-area-inset-bottom, 0px), 8px);
 }
 
-/* Touch friendly tap highlights */
+/* Prevent iOS Safari from auto-zooming on form input focus */
+@media screen and (max-width: 768px) {
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  input[type="date"],
+  input[type="search"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Touch friendly tap highlights & smooth scrolling */
 * {
   -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* Smooth inertia scrolling on mobile */
+.overflow-y-auto, .overflow-x-auto {
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Typography Helpers */
