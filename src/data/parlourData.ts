@@ -128,7 +128,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     tag: "Bestseller",
     shortDesc: "Deep vacuum pore cleansing, diamond exfoliation, and 24K pure gold serum infusion for instant bride glow.",
     fullDesc: "Gentle lymphatic drainage, active hyaluronic acid boost, LED phototherapy, and authentic 24-karat gold therapy to give you flawless glass skin before big events.",
-    image: "/images/5.jpeg",
+    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80",
     benefits: ["Instant Red Carpet Glow", "Removes Blackheads & Tan", "Tightens Open Pores", "Zero Downtime"]
   },
   {
@@ -143,7 +143,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     tag: "Trending",
     shortDesc: "Intensive anti-frizz reconstruction infused with amino acids, nano-keratin, and caviar gloss serum.",
     fullDesc: "Transform dull, chemically treated, or frizzy hair into mirror-like silky locks lasting 5-6 months. 100% Formaldehyde-free.",
-    image: "/images/4.jpeg",
+    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
     benefits: ["Silky Smooth & Mirror Shine", "Repairs Split Ends & Heat Damage", "Lasts 5-6 Months", "Safe for Color-Treated Hair"]
   },
   {
@@ -158,7 +158,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     tag: "Party Favorite",
     shortDesc: "Smokey/soft glam eyes, sculpted contour, velvet transfer-proof lips, and designer curls or sleek hair styling.",
     fullDesc: "Get event-ready with international luxury cosmetics (NARS, MAC, Huda Beauty, Charlotte Tilbury) tailored for your outfit.",
-    image: "/images/2.jpeg",
+    image: "/images/6.jpeg",
     benefits: ["Long-Wear 12-Hour Stay", "False 3D Lashes Included", "Body Shimmer & Hair Styling Included", "Flawless in Studio Lighting"]
   },
   {
@@ -173,7 +173,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     tag: "Artisan Color",
     shortDesc: "Hand-painted dimensional hair highlights tailored with customized gloss toner and Olaplex bond builder.",
     fullDesc: "Multidimensional sun-kissed shades designed to complement Indian skin undertones seamlessly with no harsh grow-out lines.",
-    image: "/images/3.jpeg",
+    image: "https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=800&q=80",
     benefits: ["Seamless Natural Blend", "Olaplex Bond Protection", "Custom Color for Skin Undertone", "Gloss Finish"]
   },
   {
@@ -188,7 +188,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     tag: "Bridal Nails",
     shortDesc: "Sculpted ombre/French gel extensions with chrome glaze, Swarovski crystals, and delicate glitter art.",
     fullDesc: "Russian manicuring followed by tip extensions, long-lasting UV LED lacquer, and hand-embellished crystal accents.",
-    image: "/images/6.jpeg",
+    image: "https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=800&q=80",
     benefits: ["Chip-Free For 4+ Weeks", "Swarovski Crystal Accents", "Strengthens Natural Nails", "Includes Cuticle Spa"]
   },
   {
@@ -203,7 +203,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     tag: "Instant Glow",
     shortDesc: "Hyperbaric oxygen jet infusion and peptide complex for luminous, deeply hydrated, plump skin.",
     fullDesc: "Infuses 98% pure oxygen and concentrated antioxidants deep into the skin layers. Perfect pre-party treatment.",
-    image: "/images/5.jpeg",
+    image: "https://images.unsplash.com/photo-1512290900672-1f02e6a09a56?auto=format&fit=crop&w=800&q=80",
     benefits: ["Instant Dewy Hydration", "Calms Redness & Sun Tan", "Pore Tightening", "Flawless Base for Makeup"]
   },
   {
@@ -218,7 +218,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     tag: "Pure Relaxation",
     shortDesc: "Full body brown sugar rose exfoliating scrub followed by relaxing deep tissue massage with warm organic Argan oil.",
     fullDesc: "Relieve pre-wedding fatigue with soothing aroma steam, essential oil reflexology, and scalp relaxation therapy.",
-    image: "/images/1.jpeg",
+    image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80",
     benefits: ["Relieves Muscle Tension & Stress", "Silky Smooth Body Polish", "Deep Hydration", "Boosts Blood Circulation"]
   }
 ];
@@ -327,7 +327,7 @@ export const BRIDAL_PACKAGES: BridalPackage[] = [
       "2 Complimentary VIP Guest HD Makeups"
     ],
     includesTrials: true,
-    image: "/images/6.jpeg"
+    image: "/images/4.jpeg"
   }
 ];
 
@@ -357,7 +357,7 @@ export const TRANSFORMATIONS: Transformation[] = [
     clientStory: "Neha had sun tan and texture issues; our 24K Gold Hydra facial gave her luminous camera-ready radiance.",
     servicesDone: ["Hydra-Infusion Facial", "Diamond Microdermabrasion", "24K Gold Collagen"],
     beforeImage: "https://images.unsplash.com/photo-1512290900672-1f02e6a09a56?auto=format&fit=crop&w=800&q=80",
-    afterImage: "/images/5.jpeg"
+    afterImage: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80"
   }
 ];
 
@@ -388,27 +388,27 @@ export const GALLERY_ITEMS = [
   },
   {
     id: "gal-5",
-    title: "24K Shimmer Eyes & Radiant Bridal Finish",
+    title: "Reception Cocktail Glam & Hollywood Curls",
     category: "Makeup",
-    image: "/images/5.jpeg"
-  },
-  {
-    id: "gal-6",
-    title: "The Grand Maharani Bridal Look by Arti Bhavsar",
-    category: "Bridal",
     image: "/images/6.jpeg"
   },
   {
+    id: "gal-6",
+    title: "24K Gold Hydra Facial & Glass Skin Session",
+    category: "Skin",
+    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80"
+  },
+  {
     id: "gal-7",
-    title: "Romantic Bridal Hairdo & Passaa Styling",
+    title: "French Balayage Dimensional Hair Waves",
     category: "Hair",
-    image: "/images/3.jpeg"
+    image: "https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=800&q=80"
   },
   {
     id: "gal-8",
-    title: "Celebrity Bride Signature Makeover",
-    category: "Bridal",
-    image: "/images/2.jpeg"
+    title: "Haute Swarovski 3D Gel Nail Extensions",
+    category: "Nails",
+    image: "https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=800&q=80"
   }
 ];
 
