@@ -1,7 +1,7 @@
 'use client';
 
-import React from 'react';
-import { Sparkles, Calendar, Award, ArrowRight, ShieldCheck, Heart, Star } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Sparkles, Calendar, Award, ArrowRight, ShieldCheck, ChevronLeft, ChevronRight } from 'lucide-react';
 import { PARLOUR_INFO } from '@/data/parlourData';
 
 interface HeroProps {
@@ -9,7 +9,59 @@ interface HeroProps {
   onOpenQuiz: () => void;
 }
 
+const HERO_SLIDES = [
+  {
+    id: 1,
+    image: '/images/1IMAGE.jpg',
+    badge: 'Celebrity Artist',
+    title: 'Arti Bhavsar',
+    subtitle: 'Founder & Celebrity Makeup Artist • Glam Bliss Winner',
+  },
+  {
+    id: 2,
+    image: '/images/2IMAGE.jpg',
+    badge: 'Master Couturier',
+    title: 'Arti Bhavsar',
+    subtitle: 'Hair Sculpture & Red Carpet Glamour Specialist',
+  },
+  {
+    id: 3,
+    image: '/images/3IMAGE.jpg',
+    badge: 'Haute Runway',
+    title: 'Arti Bhavsar',
+    subtitle: '80s Glam & International Aesthetic Vision',
+  },
+  {
+    id: 4,
+    image: '/images/4IMAGE.jpg',
+    badge: 'Signature Style',
+    title: 'Arti Bhavsar',
+    subtitle: 'Editorial Beauty & Cinematic Makeup Director',
+  },
+];
+
 export default function Hero({ onOpenBooking, onOpenQuiz }: HeroProps) {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    if (isPaused) return;
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, [isPaused]);
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
+  };
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+  };
+
+  const activeSlide = HERO_SLIDES[currentSlide];
+
   return (
     <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-4 sm:pt-8 pb-12 sm:pb-16 lg:py-20">
       
@@ -107,41 +159,92 @@ export default function Hero({ onOpenBooking, onOpenQuiz }: HeroProps) {
 
           </div>
 
-          {/* Right Column: Visual Showcase */}
+          {/* Right Column: Visual Auto-Slideshow Showcase */}
           <div className="lg:col-span-5 relative mt-3 sm:mt-4 lg:mt-0">
-            <div className="relative mx-auto max-w-sm sm:max-w-md lg:max-w-none">
+            <div
+              className="relative mx-auto max-w-sm sm:max-w-md lg:max-w-none group"
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+            >
               
               {/* Glowing Rose-Gold Border Card */}
               <div className="relative rounded-3xl overflow-hidden luxe-card p-2 sm:p-3 shadow-2xl bg-white border-2 border-[#D97D64]/30">
-                <div className="relative h-[290px] xs:h-[350px] sm:h-[480px] w-full rounded-2xl overflow-hidden bg-[#FFF4F1]">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/images/6.jpeg"
-                    alt="Arti Bhavsar Bridal Makeover - Nivi Beauty Care"
-                    className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700"
-                  />
+                <div className="relative aspect-[3/4] sm:aspect-[4/5] sm:max-h-[520px] w-full rounded-2xl overflow-hidden bg-[#2D1B28]">
                   
-                  {/* Overlay Gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  {/* Slides */}
+                  {HERO_SLIDES.map((slide, index) => (
+                    <div
+                      key={slide.id}
+                      className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                        index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+                      }`}
+                    >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={slide.image}
+                        alt={slide.title}
+                        className="w-full h-full object-cover object-top sm:object-center transform hover:scale-105 transition-transform duration-700"
+                      />
+                    </div>
+                  ))}
+                  
+                  {/* Overlay Gradient for readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/30 z-20 pointer-events-none" />
 
                   {/* Top Badge on Image */}
-                  <div className="absolute top-2.5 left-2.5 sm:top-4 sm:left-4 flex items-center gap-1 px-2 sm:px-3 py-0.5 sm:py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-[#D97D64]/30 text-[9px] xs:text-[10px] sm:text-xs text-[#B85F48] font-bold shadow-md">
-                    <Sparkles className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 text-[#D97D64]" />
-                    <span>Signature Bridal</span>
+                  <div className="absolute top-2.5 left-2.5 sm:top-4 sm:left-4 z-30 flex items-center gap-1 px-2.5 sm:px-3.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-[#D97D64]/50 text-[10px] sm:text-xs text-[#F5DE98] font-bold shadow-lg transition-all">
+                    <Sparkles className="w-3 h-3 text-[#F5DE98]" />
+                    <span>{activeSlide.badge}</span>
                   </div>
 
                   {/* Live Status on Image */}
-                  <div className="absolute top-2.5 right-2.5 sm:top-4 sm:right-4 flex items-center gap-1 px-2 sm:px-3 py-0.5 sm:py-1.5 rounded-full bg-emerald-100/95 backdrop-blur-md border border-emerald-500/30 text-[9px] xs:text-[10px] sm:text-xs text-emerald-800 font-bold shadow-md">
-                    <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <div className="absolute top-2.5 right-2.5 sm:top-4 sm:right-4 z-30 flex items-center gap-1 px-2.5 sm:px-3 py-1 rounded-full bg-emerald-950/80 backdrop-blur-md border border-emerald-500/50 text-[10px] sm:text-xs text-emerald-300 font-bold shadow-lg">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                     <span>Open Today</span>
                   </div>
 
+                  {/* Next / Prev Quick Nav Buttons */}
+                  <button
+                    onClick={prevSlide}
+                    className="absolute left-2 top-1/2 -translate-y-1/2 z-30 p-2 rounded-full bg-black/40 hover:bg-black/70 text-white backdrop-blur-md opacity-70 sm:opacity-0 group-hover:opacity-100 transition-all duration-300 active:scale-95 cursor-pointer"
+                    aria-label="Previous image"
+                  >
+                    <ChevronLeft className="w-4 h-4" />
+                  </button>
+                  <button
+                    onClick={nextSlide}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 z-30 p-2 rounded-full bg-black/40 hover:bg-black/70 text-white backdrop-blur-md opacity-70 sm:opacity-0 group-hover:opacity-100 transition-all duration-300 active:scale-95 cursor-pointer"
+                    aria-label="Next image"
+                  >
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+
+                  {/* Pagination Dots */}
+                  <div className="absolute top-12 right-2.5 sm:top-14 sm:right-4 z-30 flex flex-col gap-1.5 p-1 rounded-full bg-black/30 backdrop-blur-md">
+                    {HERO_SLIDES.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setCurrentSlide(idx)}
+                        className={`w-1.5 sm:w-2 transition-all duration-300 rounded-full cursor-pointer ${
+                          idx === currentSlide
+                            ? 'h-4 sm:h-5 bg-[#F5DE98]'
+                            : 'h-1.5 sm:h-2 bg-white/40 hover:bg-white/70'
+                        }`}
+                        aria-label={`Go to slide ${idx + 1}`}
+                      />
+                    ))}
+                  </div>
+
                   {/* Bottom Image Caption */}
-                  <div className="absolute bottom-2.5 left-2.5 right-2.5 sm:bottom-4 sm:left-4 sm:right-4 p-2.5 sm:p-4 rounded-xl bg-white/95 backdrop-blur-md border border-[#D97D64]/30 shadow-lg">
+                  <div className="absolute bottom-2.5 left-2.5 right-2.5 sm:bottom-4 sm:left-4 sm:right-4 z-30 p-3 sm:p-4 rounded-xl bg-black/75 backdrop-blur-md border border-white/10 shadow-2xl">
                     <div className="flex items-center justify-between gap-2">
                       <div className="min-w-0">
-                        <h3 className="font-serif text-xs xs:text-sm sm:text-base font-bold text-[#1C1322] truncate">Nivi Royal Bridal Suite</h3>
-                        <p className="text-[9px] xs:text-[10px] sm:text-xs text-[#D97D64] font-semibold truncate">HD Airbrush • Royal Jewelry • Draping</p>
+                        <h3 className="font-serif text-sm sm:text-base font-bold text-white truncate transition-all">
+                          {activeSlide.title}
+                        </h3>
+                        <p className="text-[10px] sm:text-xs text-[#F5DE98] font-semibold truncate">
+                          {activeSlide.subtitle}
+                        </p>
                       </div>
                       <button
                         onClick={onOpenBooking}
@@ -152,28 +255,12 @@ export default function Hero({ onOpenBooking, onOpenQuiz }: HeroProps) {
                       </button>
                     </div>
                   </div>
-                </div>
-              </div>
 
-              {/* Floating Award Micro-Card (Shown on tablet and desktop) */}
-              <div className="absolute -bottom-5 -left-4 hidden sm:flex items-center gap-3 p-3 rounded-2xl bg-white border-2 border-[#D97D64]/30 shadow-xl max-w-xs animate-float-slow">
-                <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[#D97D64] shrink-0">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/images/2.jpeg"
-                    alt="Arti Bhavsar"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div>
-                  <p className="text-xs font-bold text-[#1C1322]">ARTI BHAVSAR</p>
-                  <p className="text-[11px] text-[#D97D64] font-bold">🏆 Glam Bliss Award Winner</p>
-                  <p className="text-[9px] text-[#6B5E72] font-semibold">Owner • Nivi Beauty Care</p>
                 </div>
               </div>
 
               {/* Floating Guarantee Badge */}
-              <div className="absolute -top-3 -right-3 hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border-2 border-[#D97D64]/30 shadow-xl">
+              <div className="absolute -top-3 -right-3 hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border-2 border-[#D97D64]/30 shadow-xl z-40">
                 <ShieldCheck className="w-4 h-4 text-[#D97D64]" />
                 <span className="text-xs font-bold text-[#1C1322]">100% Original Cosmetics</span>
               </div>

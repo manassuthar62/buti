@@ -128,7 +128,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     tag: "Bestseller",
     shortDesc: "Deep vacuum pore cleansing, diamond exfoliation, and 24K pure gold serum infusion for instant bride glow.",
     fullDesc: "Gentle lymphatic drainage, active hyaluronic acid boost, LED phototherapy, and authentic 24-karat gold therapy to give you flawless glass skin before big events.",
-    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80",
+    image: "/images/facial_gold.jpg",
     benefits: ["Instant Red Carpet Glow", "Removes Blackheads & Tan", "Tightens Open Pores", "Zero Downtime"]
   },
   {
@@ -143,7 +143,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     tag: "Trending",
     shortDesc: "Intensive anti-frizz reconstruction infused with amino acids, nano-keratin, and caviar gloss serum.",
     fullDesc: "Transform dull, chemically treated, or frizzy hair into mirror-like silky locks lasting 5-6 months. 100% Formaldehyde-free.",
-    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
+    image: "/images/hair_keratin.jpg",
     benefits: ["Silky Smooth & Mirror Shine", "Repairs Split Ends & Heat Damage", "Lasts 5-6 Months", "Safe for Color-Treated Hair"]
   },
   {
@@ -173,7 +173,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     tag: "Artisan Color",
     shortDesc: "Hand-painted dimensional hair highlights tailored with customized gloss toner and Olaplex bond builder.",
     fullDesc: "Multidimensional sun-kissed shades designed to complement Indian skin undertones seamlessly with no harsh grow-out lines.",
-    image: "https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=800&q=80",
+    image: "/images/hair_balayage.jpg",
     benefits: ["Seamless Natural Blend", "Olaplex Bond Protection", "Custom Color for Skin Undertone", "Gloss Finish"]
   },
   {
@@ -188,7 +188,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     tag: "Bridal Nails",
     shortDesc: "Sculpted ombre/French gel extensions with chrome glaze, Swarovski crystals, and delicate glitter art.",
     fullDesc: "Russian manicuring followed by tip extensions, long-lasting UV LED lacquer, and hand-embellished crystal accents.",
-    image: "https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=800&q=80",
+    image: "/images/nails_art.jpg",
     benefits: ["Chip-Free For 4+ Weeks", "Swarovski Crystal Accents", "Strengthens Natural Nails", "Includes Cuticle Spa"]
   },
   {
@@ -203,7 +203,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     tag: "Instant Glow",
     shortDesc: "Hyperbaric oxygen jet infusion and peptide complex for luminous, deeply hydrated, plump skin.",
     fullDesc: "Infuses 98% pure oxygen and concentrated antioxidants deep into the skin layers. Perfect pre-party treatment.",
-    image: "https://images.unsplash.com/photo-1512290900672-1f02e6a09a56?auto=format&fit=crop&w=800&q=80",
+    image: "/images/skin_korean.jpg",
     benefits: ["Instant Dewy Hydration", "Calms Redness & Sun Tan", "Pore Tightening", "Flawless Base for Makeup"]
   },
   {
@@ -218,7 +218,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     tag: "Pure Relaxation",
     shortDesc: "Full body brown sugar rose exfoliating scrub followed by relaxing deep tissue massage with warm organic Argan oil.",
     fullDesc: "Relieve pre-wedding fatigue with soothing aroma steam, essential oil reflexology, and scalp relaxation therapy.",
-    image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80",
+    image: "/images/spa_wellness.jpg",
     benefits: ["Relieves Muscle Tension & Stress", "Silky Smooth Body Polish", "Deep Hydration", "Boosts Blood Circulation"]
   }
 ];
@@ -232,7 +232,7 @@ export const STYLISTS_DATA: Stylist[] = [
     experience: "10+ Years",
     rating: 5.0,
     reviewsCount: 770,
-    image: "/images/2.jpeg",
+    image: "/images/1IMAGE.jpg",
     availableDays: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
     award: "Winner: Glam Bliss Awards 💅"
   },
@@ -244,7 +244,7 @@ export const STYLISTS_DATA: Stylist[] = [
     experience: "8+ Years",
     rating: 4.95,
     reviewsCount: 420,
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
+    image: "/images/stylist_pooja.jpg",
     availableDays: ["Mon", "Wed", "Thu", "Fri", "Sat", "Sun"]
   },
   {
@@ -255,7 +255,7 @@ export const STYLISTS_DATA: Stylist[] = [
     experience: "7+ Years",
     rating: 4.94,
     reviewsCount: 380,
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80",
+    image: "/images/stylist_sneha.jpg",
     availableDays: ["Mon", "Tue", "Thu", "Fri", "Sat", "Sun"]
   },
   {
@@ -266,7 +266,7 @@ export const STYLISTS_DATA: Stylist[] = [
     experience: "6+ Years",
     rating: 4.92,
     reviewsCount: 310,
-    image: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=600&q=80",
+    image: "/images/stylist_neha.jpg",
     availableDays: ["Tue", "Wed", "Fri", "Sat", "Sun"]
   }
 ];
@@ -338,7 +338,7 @@ export const TRANSFORMATIONS: Transformation[] = [
     category: "Bridal Transformation",
     clientStory: "Komal from Banswara wanted a regal traditional Rajputi bridal look with flawless jewelry setting and tear-proof HD makeup.",
     servicesDone: ["Signature HD Airbrush by Arti Bhavsar", "Jewelry Fixation", "Hydra Glow Prep"],
-    beforeImage: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
+    beforeImage: "/images/stylist_pooja.jpg",
     afterImage: "/images/1.jpeg"
   },
   {
@@ -347,7 +347,7 @@ export const TRANSFORMATIONS: Transformation[] = [
     category: "Jewelry Architecture",
     clientStory: "Priya wanted to transform dry, flat hair into glossy sun-kissed bridal waves with heavy Passaa and Kundan jewelry balance.",
     servicesDone: ["Olaplex Bond Multiplier", "Royal Passaa Setting", "Caviar Botox Gloss"],
-    beforeImage: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
+    beforeImage: "/images/hair_keratin.jpg",
     afterImage: "/images/3.jpeg"
   },
   {
@@ -356,8 +356,8 @@ export const TRANSFORMATIONS: Transformation[] = [
     category: "Skin Transformation",
     clientStory: "Neha had sun tan and texture issues; our 24K Gold Hydra facial gave her luminous camera-ready radiance.",
     servicesDone: ["Hydra-Infusion Facial", "Diamond Microdermabrasion", "24K Gold Collagen"],
-    beforeImage: "https://images.unsplash.com/photo-1512290900672-1f02e6a09a56?auto=format&fit=crop&w=800&q=80",
-    afterImage: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80"
+    beforeImage: "/images/skin_korean.jpg",
+    afterImage: "/images/facial_gold.jpg"
   }
 ];
 
@@ -396,19 +396,19 @@ export const GALLERY_ITEMS = [
     id: "gal-6",
     title: "24K Gold Hydra Facial & Glass Skin Session",
     category: "Skin",
-    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80"
+    image: "/images/facial_gold.jpg"
   },
   {
     id: "gal-7",
     title: "French Balayage Dimensional Hair Waves",
     category: "Hair",
-    image: "https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=800&q=80"
+    image: "/images/hair_balayage.jpg"
   },
   {
     id: "gal-8",
     title: "Haute Swarovski 3D Gel Nail Extensions",
     category: "Nails",
-    image: "https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=800&q=80"
+    image: "/images/nails_art.jpg"
   }
 ];
 
@@ -421,7 +421,7 @@ export const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     comment: "Arti Didi did magic on my wedding day! My makeup stayed completely fresh and glowing throughout the whole 12-hour ceremony and Vidai crying. Everyone praised the jewelry draping!",
     date: "February 2026",
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
+    avatar: "/images/3.jpeg",
     verified: true
   },
   {
@@ -432,7 +432,7 @@ export const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     comment: "Nivi Beauty Care is hands-down the best salon in Partapur & Banswara district. Arti Bhavsar is a true artist and the Glam Bliss award is so well deserved!",
     date: "January 2026",
-    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80",
+    avatar: "/images/4.jpeg",
     verified: true
   },
   {
@@ -443,7 +443,7 @@ export const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     comment: "The glass skin glow is unbelievable! If you want celebrity bridal makeup or glowing skin in Banswara/Partapur, Arti Bhavsar at Nivi Beauty Care is the only choice.",
     date: "March 2026",
-    avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80",
+    avatar: "/images/5.jpeg",
     verified: true
   }
 ];
